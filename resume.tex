@@ -1,12 +1,13 @@
 % Carlos Anibal Lozano Perez -- Resume
-% Compile with: pdflatex resume.tex   (or xelatex / tectonic)
+% Single column so ATS parsers read it top to bottom.
+% Compile with: tectonic resume-fixed.tex  (or pdflatex)
 \documentclass[10pt,a4paper]{article}
 
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage[scaled]{helvet}
 \renewcommand{\familydefault}{\sfdefault}
-\usepackage[a4paper,margin=1.1cm,top=1.2cm,bottom=1cm]{geometry}
+\usepackage[a4paper,margin=1.4cm,top=1.2cm,bottom=1.1cm]{geometry}
 \usepackage{xcolor}
 \usepackage{enumitem}
 \usepackage[hidelinks]{hyperref}
@@ -17,140 +18,111 @@
 \pagestyle{empty}
 \setlength{\parindent}{0pt}
 
-% ---------- Helpers ----------
-% Sidebar section title with underline
-\newcommand{\sidesection}[1]{%
-  \vspace{10pt}%
-  {\fontsize{17}{19}\selectfont\bfseries\color{heading}#1}\par
-  \vspace{-3pt}\rule{\linewidth}{0.8pt}\par\vspace{5pt}}
-
-% Main section title with underline
-\newcommand{\mainsection}[1]{%
-  \vspace{6pt}%
-  {\fontsize{17}{19}\selectfont\color{heading}#1}\par
-  \vspace{-3pt}\rule{\linewidth}{0.8pt}\par\vspace{4pt}}
+\renewcommand{\section}[1]{%
+  \vspace{7pt}%
+  {\fontsize{14}{16}\selectfont\color{heading}#1}\par
+  \vspace{-4pt}\rule{\linewidth}{0.6pt}\par\vspace{3pt}}
 
 % \job{Title}{Dates}{Company}{Location}
 \newcommand{\job}[4]{%
-  \vspace{6pt}%
+  \vspace{5pt}%
   \textbf{#1} -- #2\par
   \textbf{#3} $\cdot$ #4\par}
 
-\newcommand{\sidelink}[2]{\href{#1}{\textcolor{linkblue}{\underline{\textbf{#2}}}}}
+\newcommand{\link}[2]{\href{#1}{\textcolor{linkblue}{#2}}}
 
-\setlist[itemize]{leftmargin=2.2em,itemsep=1pt,topsep=1pt,parsep=0pt,label=\textbullet}
+\setlist[itemize]{leftmargin=1.6em,itemsep=0.5pt,topsep=1pt,parsep=0pt,label=\textbullet}
 
 \begin{document}
 \small
 
-% ================= LEFT COLUMN =================
-\begin{minipage}[t]{0.29\textwidth}
-\vspace{0pt}\raggedright\normalsize
-{\fontsize{19}{24}\selectfont CARLOS ANIBAL\\LOZANO PEREZ\par}
-\vspace{8pt}
+% ================= HEADER =================
+{\fontsize{20}{24}\selectfont CARLOS ANIBAL LOZANO PEREZ\par}
+\vspace{2pt}
+Mexico City, Mexico $\cdot$ +52 55 2186 2480 $\cdot$
+\link{mailto:aniolog@gmail.com}{aniolog@gmail.com} $\cdot$
+% TODO(recruiter): add your LinkedIn URL (link and visible text)
+\link{https://www.linkedin.com/in/}{linkedin.com/in/} $\cdot$
+\link{https://github.com/aniolog}{github.com/aniolog}\par
 
-\sidesection{Contact}
-\textbf{Phone:}\\
-+52 55 2186 2480
+% ================= SUMMARY =================
+\section{Summary}
+Frontend Team Lead with 9 years of software engineering experience, including 7+ years at Addi, a
+consumer-lending fintech, building lending, identity-verification and payment products with React and
+Next.js. Designed the micro-frontend and DDD reference architecture used by front-end teams of
+\textasciitilde30 developers, led front-end efforts for the Brazil expansion, and co-designed the front-end hiring process.
 
-\vspace{8pt}
-\textbf{Email:}\\
-\href{mailto:aniolog@gmail.com}{aniolog@gmail.com}
+% ================= SKILLS =================
+\section{Skills}
+% TODO(recruiter): add TypeScript if you use it -- nearly every fintech lead posting requires it
+% TODO(recruiter): add E2E testing / CI/CD tools you use (e.g. Playwright, Cypress, GitHub Actions)
+\textbf{Frontend:} React, Next.js, JavaScript, HTML, CSS, Redux, Styled Components\\
+\textbf{Architecture:} Micro frontends, Domain-Driven Design (DDD), Software Product Lines, Design Systems, Storybook\\
+\textbf{Testing \& data:} Jest, SQL\\
+\textbf{Languages:} English and Spanish (fluent, written and verbal)
 
-\vspace{8pt}
-\textbf{Location}\\
-Mexico City, Mexico
+% ================= EXPERIENCE =================
+\section{Experience}
 
-\sidesection{Links}
-% TODO: replace with your LinkedIn profile URL
-\sidelink{https://www.linkedin.com/in/}{Linkedin}
-
-\vspace{8pt}
-\sidelink{https://github.com/aniolog}{GitHub}
-
-\vspace{12pt}
-\sidesection{Skills}
-Javascript, css, html, react, redux, flux, microfrontends, DDD, jest,
-nextjs, SQL and Styled Components
-
-\sidesection{Languages}
-Fluent in English and Spanish, both written and verbal.
-\end{minipage}%
-\hfill
-% ================= RIGHT COLUMN =================
-\begin{minipage}[t]{0.67\textwidth}
-\vspace{0pt}
-\mainsection{Experience}
-
-\job{Team Lead}{Apr 2019 -- Present}{Addi}{Remote}
-\vspace{2pt}\textit{Frontend Developer} -- Apr 2019 -- Nov 2026\par
+% TODO(recruiter): "Team Lead -- Present" and "Frontend Developer -- Nov 2026" share a start date; confirm the real dates of each title
+\job{Team Lead}{Apr 2019 -- Present}{Addi (consumer lending fintech)}{Remote}
+\vspace{1pt}\textit{Frontend Developer} -- Apr 2019 -- Nov 2026\par
 \begin{itemize}
+  % TODO(recruiter): what changed in the AI-native transformation (tools, workflow) and what result?
   \item Led the AI-native architecture transformation of Addi's front-end platform.
-  \item Led the Quick Pay implementation, shortening the time it takes users to
-        originate loans.
-  \item Built, enhanced and led core platform features such as the Ally Management
-        Module, Loan Cancellation Module, Identity Verification Module, Client mobile
-        app, and Payment Link Origination flow---enabling seamless integration and
-        supporting daily operations for Addi's lending process across ally
-        e-commerces and users using react and next js.
-  \item Led architectural improvements, including the design and implementation of a
-        Software Product Line Architecture and a scalable reference architecture using
-        DDD and micro frontends that enabled faster development across front-end teams
-        of \textasciitilde30 developers.
-  \item Drove international expansion, leading Addi's front-end efforts in the
-        Brazilian market.
-  \item Contributed to the Design Systems initiative, setting standards for building
-        scalable, reusable components using react, styled components and storybook.
-  \item Mentored team members and new joiners, promoting best practices across Addi's
-        front-end codebase.
-  \item Co-designed the front-end hiring process and played a key role in talent
-        acquisition by interviewing and hiring the majority of the frontend candidates.
-  \item Oversaw Addi's mobile app releases and performance, ensuring stability, timely
-        updates, and a high-quality user experience.
-  \item Collaborated closely with designers and product owners to define optimal
-        solutions for product initiatives, balancing user experience, delivery
-        timelines, and technical quality
+  % TODO(recruiter): how much shorter did loan origination get (before -> after)?
+  \item Led the Quick Pay implementation, shortening the time it takes users to originate loans.
+  \item Designed and implemented a Software Product Line Architecture and a scalable reference
+        architecture using DDD and micro frontends, enabling faster development across front-end
+        teams of \textasciitilde30 developers.
+  % TODO(recruiter): how many allies / users rely on these modules?
+  \item Built and led core lending features with React and Next.js: Ally Management, Loan
+        Cancellation, Identity Verification, Payment Link Origination and the client mobile app,
+        supporting daily lending operations across ally e-commerces and users.
+  % TODO(recruiter): what launched in Brazil, and how fast?
+  \item Led Addi's front-end efforts in the Brazilian market as part of its international expansion.
+  \item Co-designed the front-end hiring process and interviewed and hired the majority of the
+        frontend candidates; mentored team members and new joiners on front-end best practices.
+  \item Set standards for scalable, reusable components in the Design Systems initiative
+        (React, Styled Components, Storybook).
+  % TODO(recruiter): any release or stability metric (crash-free rate, release cadence, rating)?
+  \item Oversaw the mobile app's releases and performance, ensuring stability and timely updates.
+  \item Partnered with designers and product owners to shape product initiatives, balancing user
+        experience, delivery timelines and technical quality.
 \end{itemize}
 
 \job{Software Engineer}{Mar 2018 -- Apr 2019}{Rappi}{Bogota, Colombia}
 \begin{itemize}
-  \item Worked on the development new features and bug solutions for Rappi's CRM.
-  \item Worked on new features for the CMS-Sampling and Rappi's van front-end projects
-        of the Sampling vertical.
-  \item Developed Rappi's operation management project in order to track of couriers
-        saturation and zone demand.
-  \item Developed feature for the operation management API.
+  \item Developed new features and fixed bugs for Rappi's CRM.
+  \item Built new features for the CMS-Sampling and van front-end projects of the Sampling vertical.
+  \item Developed the operation management project to track courier saturation and zone demand,
+        plus features for its API.
 \end{itemize}
 
+% TODO(recruiter): Freelance, Wbi innovation and NovoPayment all show Nov 2017 -- Mar 2018; correct the dates
 \job{Software Engineer}{Nov 2017 -- Mar 2018}{Freelance}{Remote}
 \begin{itemize}
-  \item Developed the Pyme diagnostics PWA app in order to track the record of the
-        companies performance using dynamic forms developed with React and IndexedDb.
-  \item Worked on the Development of new feature for the Check in and Performance
-        Mobile Apps.
-  \item Developed new features to the REST API using Ruby on Rails and MySql
+  \item Developed the Pyme diagnostics PWA to track company performance using dynamic forms
+        built with React and IndexedDB.
+  \item Built new features for the Check-in and Performance mobile apps and their REST API
+        (Ruby on Rails, MySQL).
 \end{itemize}
 
 \job{Software Engineer}{Nov 2017 -- Mar 2018}{Wbi innovation}{Caracas, Venezuela}
 \begin{itemize}
-  \item Refactored and developed new features to the Jet Man Pay App and Web Merchant
-        the ease the payment process for the airlines to pay the fees at the Venezuelan
-        airports.
-  \item Design and developed new features for the Jet Man Pay REST API using Java and
-        Spring Framework.
+  \item Refactored and extended the Jet Man Pay app and web merchant, easing how airlines pay fees
+        at Venezuelan airports.
+  \item Designed and developed features for the Jet Man Pay REST API (Java, Spring Framework).
 \end{itemize}
 
 \job{Software Engineer}{Nov 2017 -- Mar 2018}{NovoPayment Inc}{Caracas, Venezuela}
 \begin{itemize}
-  \item Worked on the development of Novopayment's Trayectos app using Ionic and
-        AngularJs.
-  \item Worked on the integration with Firebase (FCM) and Apple push notification (APN)
-        services using Java.
+  \item Developed NovoPayment's Trayectos app with Ionic and AngularJS.
+  \item Integrated Firebase Cloud Messaging (FCM) and Apple Push Notification service (APNs) using Java.
 \end{itemize}
 
-\mainsection{Education}
-Bachelor in Computer Engineering. 2010 -- 2017\\
-\textbf{Universidad Católica Andres Bello}, Caracas, Venezuela.
-\end{minipage}
+% ================= EDUCATION =================
+\section{Education}
+\textbf{Bachelor in Computer Engineering}, Universidad Católica Andrés Bello, Caracas, Venezuela -- 2010 -- 2017
 
 \end{document}
