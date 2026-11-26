@@ -1,0 +1,153 @@
+% Carlos Anibal Lozano Perez -- Resume
+% Compile with: pdflatex resume.tex   (or xelatex / tectonic)
+\documentclass[10pt,a4paper]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[scaled]{helvet}
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage[a4paper,margin=1.1cm,top=1.2cm,bottom=1cm]{geometry}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+
+\definecolor{heading}{HTML}{333333}
+\definecolor{linkblue}{HTML}{1A5FB4}
+
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+
+% ---------- Helpers ----------
+% Sidebar section title with underline
+\newcommand{\sidesection}[1]{%
+  \vspace{10pt}%
+  {\fontsize{17}{19}\selectfont\bfseries\color{heading}#1}\par
+  \vspace{-3pt}\rule{\linewidth}{0.8pt}\par\vspace{5pt}}
+
+% Main section title with underline
+\newcommand{\mainsection}[1]{%
+  \vspace{6pt}%
+  {\fontsize{17}{19}\selectfont\color{heading}#1}\par
+  \vspace{-3pt}\rule{\linewidth}{0.8pt}\par\vspace{4pt}}
+
+% \job{Title}{Dates}{Company}{Location}
+\newcommand{\job}[4]{%
+  \vspace{6pt}%
+  \textbf{#1} -- #2\par
+  \textbf{#3} $\cdot$ #4\par}
+
+\newcommand{\sidelink}[2]{\href{#1}{\textcolor{linkblue}{\underline{\textbf{#2}}}}}
+
+\setlist[itemize]{leftmargin=2.2em,itemsep=1pt,topsep=1pt,parsep=0pt,label=\textbullet}
+
+\begin{document}
+\small
+
+% ================= LEFT COLUMN =================
+\begin{minipage}[t]{0.29\textwidth}
+\vspace{0pt}\raggedright\normalsize
+{\fontsize{19}{24}\selectfont CARLOS ANIBAL\\LOZANO PEREZ\par}
+\vspace{8pt}
+
+\sidesection{Contact}
+\textbf{Phone:}\\
++52 55 2186 2480
+
+\vspace{8pt}
+\textbf{Email:}\\
+\href{mailto:aniolog@gmail.com}{aniolog@gmail.com}
+
+\vspace{8pt}
+\textbf{Location}\\
+Mexico City, Mexico
+
+\sidesection{Links}
+% TODO: replace with your LinkedIn profile URL
+\sidelink{https://www.linkedin.com/in/}{Linkedin}
+
+\vspace{8pt}
+\sidelink{https://github.com/aniolog}{GitHub}
+
+\vspace{12pt}
+\sidesection{Skills}
+Javascript, css, html, react, redux, flux, microfrontends, DDD, jest,
+nextjs, SQL and Styled Components
+
+\sidesection{Languages}
+Fluent in English and Spanish, both written and verbal.
+\end{minipage}%
+\hfill
+% ================= RIGHT COLUMN =================
+\begin{minipage}[t]{0.67\textwidth}
+\vspace{0pt}
+\mainsection{Experience}
+
+\job{Team Lead}{Apr 2019 -- Present}{Addi}{Remote}
+\vspace{2pt}\textit{Frontend Developer}\par
+\begin{itemize}
+  \item Built, enhanced and led core platform features such as the Ally Management
+        Module, Loan Cancellation Module, Identity Verification Module, Client mobile
+        app, and Payment Link Origination flow---enabling seamless integration and
+        supporting daily operations for Addi's lending process across ally
+        e-commerces and users using react and next js.
+  \item Led architectural improvements, including the design and implementation of a
+        Software Product Line Architecture and a scalable reference architecture using
+        DDD and micro frontends that enabled faster development across front-end teams
+        of \textasciitilde30 developers.
+  \item Drove international expansion, leading Addi's front-end efforts in the
+        Brazilian market.
+  \item Contributed to the Design Systems initiative, setting standards for building
+        scalable, reusable components using react, styled components and storybook.
+  \item Mentored team members and new joiners, promoting best practices across Addi's
+        front-end codebase.
+  \item Co-designed the front-end hiring process and played a key role in talent
+        acquisition by interviewing and hiring the majority of the frontend candidates.
+  \item Oversaw Addi's mobile app releases and performance, ensuring stability, timely
+        updates, and a high-quality user experience.
+  \item Collaborated closely with designers and product owners to define optimal
+        solutions for product initiatives, balancing user experience, delivery
+        timelines, and technical quality
+\end{itemize}
+
+\job{Software Engineer}{Mar 2018 -- Apr 2019}{Rappi}{Bogota, Colombia}
+\begin{itemize}
+  \item Worked on the development new features and bug solutions for Rappi's CRM.
+  \item Worked on new features for the CMS-Sampling and Rappi's van front-end projects
+        of the Sampling vertical.
+  \item Developed Rappi's operation management project in order to track of couriers
+        saturation and zone demand.
+  \item Developed feature for the operation management API.
+\end{itemize}
+
+\job{Software Engineer}{Nov 2017 -- Mar 2018}{Freelance}{Remote}
+\begin{itemize}
+  \item Developed the Pyme diagnostics PWA app in order to track the record of the
+        companies performance using dynamic forms developed with React and IndexedDb.
+  \item Worked on the Development of new feature for the Check in and Performance
+        Mobile Apps.
+  \item Developed new features to the REST API using Ruby on Rails and MySql
+\end{itemize}
+
+\job{Software Engineer}{Nov 2017 -- Mar 2018}{Wbi innovation}{Caracas, Venezuela}
+\begin{itemize}
+  \item Refactored and developed new features to the Jet Man Pay App and Web Merchant
+        the ease the payment process for the airlines to pay the fees at the Venezuelan
+        airports.
+  \item Design and developed new features for the Jet Man Pay REST API using Java and
+        Spring Framework.
+\end{itemize}
+
+\job{Software Engineer}{Nov 2017 -- Mar 2018}{NovoPayment Inc}{Caracas, Venezuela}
+\begin{itemize}
+  \item Worked on the development of Novopayment's Trayectos app using Ionic and
+        AngularJs.
+  \item Worked on the integration with Firebase (FCM) and Apple push notification (APN)
+        services using Java.
+\end{itemize}
+
+\mainsection{Education}
+Bachelor in Computer Engineering. 2010 -- 2017\\
+\textbf{Universidad Católica Andres Bello}, Caracas, Venezuela.
+\end{minipage}
+
+\end{document}
