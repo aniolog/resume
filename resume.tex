@@ -1,5 +1,5 @@
 % Carlos Anibal Lozano Perez -- Resume
-% Single column so ATS parsers read it top to bottom.
+% Full-width header; skills in a left sidebar, summary/experience/education on the right.
 % Compile with: tectonic resume.tex  (or pdflatex)
 \documentclass[10pt,a4paper]{article}
 
@@ -7,7 +7,7 @@
 \usepackage[utf8]{inputenc}
 \usepackage[scaled]{helvet}
 \renewcommand{\familydefault}{\sfdefault}
-\usepackage[a4paper,margin=1.4cm,top=1.2cm,bottom=1.1cm]{geometry}
+\usepackage[a4paper,margin=1.1cm,top=1.1cm,bottom=1cm]{geometry}
 \usepackage{xcolor}
 \usepackage{enumitem}
 \usepackage[hidelinks]{hyperref}
@@ -44,20 +44,36 @@ Mexico City, Mexico $\cdot$ +52 55 2186 2480 $\cdot$
 \link{https://www.linkedin.com/in/carlos-anibal-lozano-b7260112b}{linkedin.com/in/carlos-anibal-lozano-b7260112b} $\cdot$
 \link{https://github.com/aniolog}{github.com/aniolog}\par
 
+% ================= SIDEBAR: SKILLS =================
+\vspace{4pt}
+\begin{minipage}[t]{0.26\textwidth}
+\vspace{0pt}\raggedright
+\section{Skills}
+% TODO(recruiter): add E2E testing / CI/CD tools you use (e.g. Playwright, Cypress, GitHub Actions)
+\textbf{Frontend}\\
+React, Next.js, TypeScript, JavaScript, HTML, CSS, Redux, Styled Components
+
+\vspace{6pt}
+\textbf{Architecture}\\
+Micro frontends, Domain-Driven Design (DDD), Software Product Lines, Design Systems, Storybook
+
+\vspace{6pt}
+\textbf{Testing \& data}\\
+Jest, SQL
+
+\section{Languages}
+English and Spanish, fluent, written and verbal.
+\end{minipage}%
+\hfill
+% ================= MAIN COLUMN =================
+\begin{minipage}[t]{0.71\textwidth}
+\vspace{0pt}
 % ================= SUMMARY =================
 \section{Summary}
 Frontend Team Lead with 9 years of software engineering experience, including 7+ years at Addi, a
 consumer-lending fintech, building lending, identity-verification and payment products with React,
 Next.js and TypeScript. Designed the micro-frontend and DDD reference architecture used by front-end teams of
 \textasciitilde30 developers, led front-end efforts for the Brazil expansion, and co-designed the front-end hiring process.
-
-% ================= SKILLS =================
-\section{Skills}
-% TODO(recruiter): add E2E testing / CI/CD tools you use (e.g. Playwright, Cypress, GitHub Actions)
-\textbf{Frontend:} React, Next.js, TypeScript, JavaScript, HTML, CSS, Redux, Styled Components\\
-\textbf{Architecture:} Micro frontends, Domain-Driven Design (DDD), Software Product Lines, Design Systems, Storybook\\
-\textbf{Testing \& data:} Jest, SQL\\
-\textbf{Languages:} English and Spanish (fluent, written and verbal)
 
 % ================= EXPERIENCE =================
 \section{Experience}
@@ -119,6 +135,8 @@ Next.js and TypeScript. Designed the micro-frontend and DDD reference architectu
 
 % ================= EDUCATION =================
 \section{Education}
-\textbf{Bachelor in Computer Engineering}, Universidad Católica Andrés Bello, Caracas, Venezuela -- 2010 -- 2017
+\textbf{Bachelor in Computer Engineering} -- 2010 -- 2017\\
+Universidad Católica Andrés Bello, Caracas, Venezuela
+\end{minipage}
 
 \end{document}
